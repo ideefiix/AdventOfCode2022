@@ -19,5 +19,25 @@ public class TreeNode
     {
         Children.Add(child);
     }
+
+    public int ValueInDirectory()
+    {
+        if (this.Value != 0) throw new ArgumentException("TreeNode is not a directory!");
+        
+        int value = 0;
+        foreach (var child in this.Children)
+        {
+            if (child.Value == 0)
+            {
+                value += child.ValueInDirectory();
+            }
+            else
+            {
+                value += child.Value;
+            }
+        }
+
+        return value;
+    }
     
 }
