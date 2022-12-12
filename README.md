@@ -13,3 +13,4 @@ In C#
 ### Execution time for part2 on xxxDestroyerxxx (my gaming PC)
 * Day 8: **6** ms
 * Day 9: **8** ms
+* Day 10: **3** ms
