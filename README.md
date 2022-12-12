@@ -10,5 +10,6 @@ In C#
 
 
 -------------------------------------
-### Execution time for both puzzles on xxxDestroyerxxx (my gaming PC)
+### Execution time for part2 on xxxDestroyerxxx (my gaming PC)
 * Day 8: **6** ms
+* Day 9: **8** ms
