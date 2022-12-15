@@ -1,0 +1,17 @@
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\bin\Debug\net6.0\day12.exe
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\bin\Debug\net6.0\day12.deps.json
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\bin\Debug\net6.0\day12.runtimeconfig.json
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\bin\Debug\net6.0\day12.dll
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\bin\Debug\net6.0\day12.pdb
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\obj\Debug\net6.0\day12.csproj.AssemblyReference.cache
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\obj\Debug\net6.0\day12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\obj\Debug\net6.0\day12.AssemblyInfoInputs.cache
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\obj\Debug\net6.0\day12.AssemblyInfo.cs
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\obj\Debug\net6.0\day12.csproj.CoreCompileInputs.cache
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\obj\Debug\net6.0\day12.dll
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\obj\Debug\net6.0\refint\day12.dll
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\obj\Debug\net6.0\day12.pdb
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\obj\Debug\net6.0\day12.genruntimeconfig.cache
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\obj\Debug\net6.0\ref\day12.dll
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\bin\Debug\net6.0\PriorityQueue.dll
+C:\Users\flind\Desktop\Github repos\AdventOfCode2022\day12\obj\Debug\net6.0\day12.csproj.CopyComplete

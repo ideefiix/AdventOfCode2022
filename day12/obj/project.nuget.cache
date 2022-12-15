@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Gu7Ztqz+RkYoKbzbUvuQh1wBjZYeqgtE2icBSwpChGdzttPHmIdJPBO3RbCNSY/f2NuHA741Da6gqgocNWOo5Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\flind\\Desktop\\Github repos\\AdventOfCode2022\\day12\\day12.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\flind\\.nuget\\packages\\optimizedpriorityqueue\\5.1.0\\optimizedpriorityqueue.5.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
