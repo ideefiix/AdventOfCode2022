@@ -25,6 +25,44 @@ public class PuzzleSolver
         Console.WriteLine("There is " + targetNode.distanceToSource + " steps to the target!");
     }
 
+    public void PrintPuzzle2Solution()
+    {
+        int stepsToClosest_a = 1000;
+        CreateGraph(); 
+        Console.WriteLine("Graph created!");
+
+        foreach (var node in graph)
+        {
+            if (node.alltitude == 'a' ) 
+            {
+                sourceNode = node;
+                RefreshGraphAndRefillPQ();
+                FindShortestPath();
+                if (targetNode.distanceToSource < stepsToClosest_a)
+                {
+                    stepsToClosest_a = targetNode.distanceToSource;
+                    Console.WriteLine("New shortest distance to a " + stepsToClosest_a);
+                }
+
+            }
+        }
+        Console.WriteLine("Shortest distance from any a is " + stepsToClosest_a);
+        
+    }
+
+    public void RefreshGraphAndRefillPQ()
+    {
+        pq = new StablePriorityQueue<Node>((mapHeight * mapWidth) + 10);
+        foreach (var node in graph)
+        {
+            node.distanceToSource = 9999;
+            pq.Enqueue(node,node.distanceToSource);
+        }
+
+        sourceNode.distanceToSource = 0;
+        pq.UpdatePriority(sourceNode, 0);
+    }
+
     public void CreateGraph()
     {
         string[] input =
@@ -46,7 +84,6 @@ public class PuzzleSolver
                 node.alltitude = input[i][j];
                 node.neighbours = new List<Node>();
                 node.distanceToSource = 9999;
-                node.previous = null;
                 if (input[i][j] == 'S')
                 {
                     node.distanceToSource = 0;
@@ -84,7 +121,6 @@ public class PuzzleSolver
                     if (distToNeighbour < neighbour.distanceToSource)
                     {
                         neighbour.distanceToSource = distToNeighbour;
-                        neighbour.previous = node;
                         pq.UpdatePriority(neighbour, distToNeighbour);
                         lastReadNeighbour = neighbour;
                     }
@@ -99,7 +135,7 @@ public class PuzzleSolver
         if (node.y != 0)
         {
             Node neighbour = graph.Find(n => n.x == node.x && n.y == node.y - 1);
-            if (Math.Abs(node.alltitude - neighbour.alltitude) < 2)
+            if (node.alltitude >= neighbour.alltitude || neighbour.alltitude - node.alltitude == 1)
             {
                 node.neighbours.Add(neighbour);
             }
@@ -109,7 +145,7 @@ public class PuzzleSolver
         if (node.y != mapHeight - 1)
         {
             Node neighbour = graph.Find(n => n.x == node.x && n.y == node.y + 1);
-            if (Math.Abs(node.alltitude - neighbour.alltitude) < 2)
+            if (node.alltitude >= neighbour.alltitude || neighbour.alltitude - node.alltitude == 1)
             {
                 node.neighbours.Add(neighbour);
             }
@@ -119,7 +155,7 @@ public class PuzzleSolver
         if (node.x != 0)
         {
             Node neighbour = graph.Find(n => n.x == node.x - 1 && n.y == node.y);
-            if (Math.Abs(node.alltitude - neighbour.alltitude) < 2)
+            if (node.alltitude >= neighbour.alltitude || neighbour.alltitude - node.alltitude == 1)
             {
                 node.neighbours.Add(neighbour);
             }
@@ -129,7 +165,7 @@ public class PuzzleSolver
         if (node.x != mapWidth - 1)
         {
             Node neighbour = graph.Find(n => n.x == node.x + 1 && n.y == node.y);
-            if (Math.Abs(node.alltitude - neighbour.alltitude) < 2)
+            if (node.alltitude >= neighbour.alltitude || neighbour.alltitude - node.alltitude == 1)
             {
                 node.neighbours.Add(neighbour);
             }
@@ -143,6 +179,29 @@ public class PuzzleSolver
         public char alltitude;
         public List<Node> neighbours;
         public int distanceToSource;
-        public Node previous;
     }
+    
+    /*
+ * Creates a broadcast search from the Target node
+ * In order to avoid endless loops we use a ttl
+ */
+    //Bad idea. STACK OVERFLOW
+    /*private void FindClosest_a_InGraph(int ttl, int jumps, Node startNode)
+    {
+        if (ttl == 0) return;
+
+        if (startNode.alltitude == 'a')
+        {
+            if (jumps < stepsToClosest_a)
+            {
+                stepsToClosest_a = jumps;
+                Console.WriteLine("New shortest distance to a " + stepsToClosest_a);
+            }
+        }
+
+        foreach (Node neighbour in startNode.neighbours)
+        {
+            FindClosest_a_InGraph(--ttl, ++jumps, neighbour);
+        }
+    }*/
 }
