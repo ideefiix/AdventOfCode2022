@@ -7,6 +7,7 @@ AdventOfCode: :christmas_tree: :two::zero::two::two: :christmas_tree:
 * Day 10: **3** ms
 * Day 11: **49** ms
 * Day 12: **1422** ms
+* Day 13: **10** ms
 
 -------------------------------------
 
